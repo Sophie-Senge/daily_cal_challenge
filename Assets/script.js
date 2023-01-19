@@ -1,8 +1,11 @@
 
 // * Display the current day at the top of the calender when a user opens the planner.
 
-let dateEl = $("#currentDay");
-dateEl.text(moment());
+// let dateEl = $("#currentDay");
+// dateEl.text(moment());
+let today = moment();
+let dayWeek = today.format("[Today is] dddd Do.[ The Time is] h:mm")
+$("#currentDay").text(dayWeek);
 
 
  
