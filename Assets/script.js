@@ -3,9 +3,14 @@
 
 // let dateEl = $("#currentDay");
 // dateEl.text(moment());
-let today = moment();
-let dayWeek = today.format("[Today is] dddd Do, LT")
-$("#currentDay").text(dayWeek);
+setInterval(
+  function(){
+
+    let today = moment();
+    $("#currentDay").text(today.format("[Today is] dddd Do, LT"));
+
+  },1000)
+
 
 
  
