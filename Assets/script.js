@@ -4,7 +4,7 @@
 // let dateEl = $("#currentDay");
 // dateEl.text(moment());
 let today = moment();
-let dayWeek = today.format("[Today is] dddd Do.[ The Time is] h:mm")
+let dayWeek = today.format("[Today is] dddd Do, LT")
 $("#currentDay").text(dayWeek);
 
 
