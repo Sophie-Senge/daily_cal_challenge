@@ -12,7 +12,14 @@ setInterval(
   },1000)
 
 
+// button listener
 
+$("#button").on("click", function(event){
+
+  console.log($(event.target).siblings("textarea").val());
+
+
+})
  
 // * Present timeblocks for standard business hours when the user scrolls down.
  
