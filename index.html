@@ -1,75 +1,38 @@
 <!DOCTYPE html>
 <html lang="en-gb">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./Assets/style.css" />
-    <title>Work Day Scheduler</title>
-  </head>
 
-  <body>
-    <header class="jumbotron">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
-    </header>
-    <div class="container">
-      <!-- Timeblocks go here -->
-      <div class="container text-center" id="projectGrid">
-        <div class="row">
-          <div class="col">
-            9am
-          </div>
-          <div class="col-9">
-            2 of 3 (wider)
-          </div>
-          <div class="col">
-            <button type="button" class="btn btn-primary btn-rounded btn-sm"><i class="far fa-save"></i></button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            10am
-          </div>
-          <div class="col-9">
-            2 of 3 (wider)
-          </div>
-          <div class="col">
-            <button type="button" class="btn btn-primary btn-rounded btn-sm"><i class="far fa-save"></i></button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            11am
-          </div>
-          <div class="col-9">
-            2 of 3 (wider)
-          </div>
-          <div class="col">
-            <button type="button" class="btn btn-primary btn-rounded btn-sm"><i class="far fa-save"></i></button>
-          </div>
-        </div>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./Assets/style.css" />
+  <title>Work Day Scheduler</title>
+</head>
 
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./Assets/script.js"></script>
-  </body>
+<body>
+  <header class="jumbotron">
+    <h1 class="display-3">Work Day Scheduler</h1>
+    <p class="lead">A simple calendar app for scheduling your work day</p>
+    <p id="currentDay" class="lead"></p>
+  </header>
+    <!-- Timeblocks go here -->
+    <div class="container" id="projectGrid">
+      <div class="row">
+        <div class="col-md-auto border">9am</div>
+        <textarea class="col-10 border" data-time="9am"></textarea>
+        <button type="button" class="col-md-auto btn btn-primary btn-rounded btn-sm"><i
+            class="far fa-save"></i></button>
+      </div>
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+      <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="./Assets/script.js"></script>
+</body>
+
 </html>
