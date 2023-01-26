@@ -63,11 +63,11 @@ event.preventDefault();
     saveSubmitBtn = ($(event.target).attr("data-time"));
     console.log(saveSubmitBtn);
     console.log(taskInputEl);
-    localStorage.setItem("newTaskEntry", taskInputEl);
-    var newTask = localStorage.getItem("newTaskEntry");
-    console.log(newTask);
+    // localStorage.setItem(saveSubmitBtn, taskInputEl);
+    // var newTask = localStorage.getItem("newTaskEntry");
+    // console.log(newTask);
   }
-  
+ 
  
 })
 
