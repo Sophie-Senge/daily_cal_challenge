@@ -6,7 +6,7 @@
 
 Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
 
-You'll need to use the [Moment.js](https://momentjs.com/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Moment.js in the browser.
+You'll need to use the [Moment.js](https://momentjs.com/) library to work with date and time. 
 
 ## User Story
 
@@ -14,6 +14,18 @@ You'll need to use the [Moment.js](https://momentjs.com/) library to work with d
 AS AN employee with a busy schedule
 I WANT to add important events to a daily planner
 SO THAT I can manage my time effectively
+
+
+## Challenges
+This is a work in progress. Due to unforseen medical issues I was unable to work on this project to date. I will be updating later down the line.
+
+### Screenshot
+
+![](./Assets/Screenshot%202023-01-26%20at%203.49.51%20PM.png)
+
+### Links
+
+- Live Site URL: (https://sophie-senge.github.io/daily_cal_challenge/)
 ```
 
 ## Acceptance Criteria
@@ -31,14 +43,6 @@ The app should:
 * Save the event in local storage when the save button is clicked in that timeblock.
 
 * Persist events between refreshes of a page
-
-The following animation demonstrates the application functionality:
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the above acceptance criteria plus the following:
-
-  * Uses a date utility library to work with date and time
 
 
 

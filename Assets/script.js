@@ -3,7 +3,7 @@
 let calDisplayEl = document.querySelector("#projectGrid");
 let taskInputEl = document.querySelectorAll(".taskInput");
 let saveSubmitBtn = document.querySelectorAll(".saveBtn")
-hourArray = [
+let hourArray = [
   "08:00",
   "09:00",
   "10:00",
@@ -16,7 +16,7 @@ hourArray = [
   "17:00"
   ]
   
- 
+  
 // * Display the current day at the top of the calender when a user opens the planner.
 // function to cycle through timeArray and populate page
 let time = 0;
@@ -58,13 +58,17 @@ event.preventDefault();
   
   
   if(event.target.matches(".saveBtn")){
+    
     taskInputEl = ($(event.target).siblings("textarea").val());
     saveSubmitBtn = ($(event.target).attr("data-time"));
     console.log(saveSubmitBtn);
     console.log(taskInputEl);
-    localStorage.setItem("taskItems: " + taskInputEl, saveSubmitBtn);
+    localStorage.setItem("newTaskEntry", taskInputEl);
+    var newTask = localStorage.getItem("newTaskEntry");
+    console.log(newTask);
   }
-  // displayTaskInput();
+  
+ 
 })
 
 // function displayTaskInput (){
@@ -76,7 +80,12 @@ event.preventDefault();
 // }
 
 
+function displayLastInput() {
+  let newTask = localStorage.getItem("newTaskEntry");
 
+}
+
+displayLastInput();
  
 // * Present timeblocks for standard business hours when the user scrolls down.
  
