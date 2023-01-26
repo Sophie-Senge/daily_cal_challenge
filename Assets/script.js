@@ -1,25 +1,82 @@
+// let timeEl = $("#9am");
 
+let calDisplayEl = document.querySelector("#projectGrid");
+let taskInputEl = document.querySelectorAll(".taskInput");
+let saveSubmitBtn = document.querySelectorAll(".saveBtn")
+hourArray = [
+  "08:00",
+  "09:00",
+  "10:00",
+  "11:00",
+  "12:00",
+  "13:00",
+  "14:00",
+  "15:00",
+  "16:00",
+  "17:00"
+  ]
+  
+ 
 // * Display the current day at the top of the calender when a user opens the planner.
+// function to cycle through timeArray and populate page
+let time = 0;
+function populatePage(){
+  for (let i = 0; i < hourArray.length; i++) {
+    time = hourArray[i]
+    
+   let newRows = `
+        <div class="row time-block">
+        <div class="col-md border hour">${time}</div>
+        <textarea class="col-10 border taskInput" data-time="${time}"></textarea>
+        <button type="button" data-time="${time}" class="col-1 btn btn-primary btn-rounded btn-sm saveBtn" id="button"><i
+            class="far fa-save"></i></button>
+      </div>`
+     
+      calDisplayEl.innerHTML = calDisplayEl.innerHTML + newRows 
+    
+  }
+}
+populatePage();
+
 
 // let dateEl = $("#currentDay");
 // dateEl.text(moment());
+let now = moment();
 setInterval(
   function(){
-
-    let today = moment();
-    $("#currentDay").text(today.format("[Today is] dddd Do, LT"));
+    $("#currentDay").text(now.format("[Today is] dddd Do, LT"));
 
   },1000)
 
 
 // button listener
 
-$("#button").on("click", function(event){
 
-  console.log($(event.target).siblings("textarea").val());
-
-
+$(".saveBtn").on("click", function(event){
+event.preventDefault();
+  // console.log($(event.target).siblings("textarea").val());
+  
+  
+  if(event.target.matches(".saveBtn")){
+    taskInputEl = ($(event.target).siblings("textarea").val());
+    saveSubmitBtn = ($(event.target).attr("data-time"));
+    console.log(saveSubmitBtn);
+    console.log(taskInputEl);
+    localStorage.setItem("taskItems: " + taskInputEl, saveSubmitBtn);
+  }
+  // displayTaskInput();
 })
+
+// function displayTaskInput (){
+//   // nineTextEl.val(localStorage.getItem("taskItems"));
+//   $("textarea").each(function(){
+//   let newTasks = textInputEl.val(localStorage.getItem("taskItems"))
+//   })
+
+// }
+
+
+
  
 // * Present timeblocks for standard business hours when the user scrolls down.
  
