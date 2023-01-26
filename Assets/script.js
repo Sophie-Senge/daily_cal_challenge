@@ -88,15 +88,15 @@ displayLastInput();
 // color code time blocks depending on how they match current time
 function timeBlockColors() {
 
-  document.querySelectorAll(".time-block").forEach(function (el) {
+  document.querySelectorAll(".time-block").forEach(function (element) {
     let currentTime = now.hours();
-    let calHour = parseInt(el.getAttribute("data-time"));
+    let calHour = parseInt(element.getAttribute("data-time"));
     if (calHour === currentTime) {
-      el.classList.add("present");
+      element.classList.add("present");
     } else if (calHour < currentTime) {
-      el.classList.add("past");
+      element.classList.add("past");
     } else {
-      el.classList.add("future");
+      element.classList.add("future");
     }
 });
 
