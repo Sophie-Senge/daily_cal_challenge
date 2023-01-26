@@ -85,27 +85,35 @@ function displayLastInput() {
 
 displayLastInput();
 
-// * Present timeblocks for standard business hours when the user scrolls down.
+// color code time blocks depending on how they match current time
 function timeBlockColors() {
 
-
-
-  $(".time-block").each(function () {
-    let currentTime = 12;
-    let calHour = parseInt($(this).attr("data-time"));
-    //   console.log(parseInt($(this).attr("data-time")))
-    //  console.log(currentTime)
-
-
-    if (calHour < currentTime) {
-      $(this).addClass("past");
-    } else if (calHour === currentTime) {
-      $(this).addClass("present");
+  document.querySelectorAll(".time-block").forEach(function (el) {
+    let currentTime = now.hours();
+    let calHour = parseInt(el.getAttribute("data-time"));
+    if (calHour === currentTime) {
+      el.classList.add("present");
+    } else if (calHour < currentTime) {
+      el.classList.add("past");
     } else {
-      $(this).addClass("future");
+      el.classList.add("future");
     }
+});
 
-  });
+  // $(".time-block").each(function () {
+  //   let currentTime = now.hours();
+  //   let calHour = parseInt($(this).attr("data-time"));
+  //   //   console.log(parseInt($(this).attr("data-time")))
+  //   //  console.log(currentTime)
+  //   if (calHour === currentTime) {
+  //     $(this).addClass("present")
+  //   } else if (calHour < currentTime) {
+  //     $(this).addClass("past")
+  //   } else {
+  //     $(this).addClass("future")
+  //   }
+
+  // });
 
 
 }
