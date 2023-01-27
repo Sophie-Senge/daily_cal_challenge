@@ -49,41 +49,36 @@ setInterval(
   }, 1000)
 
 
-// button listener to save input
+// button listener to save input in localStorage
 $(".saveBtn").on("click", function (event) {
   event.preventDefault();
   // console.log($(event.target).siblings("textarea").val());
-
+ 
 
   if (event.target.matches(".saveBtn")) {
-
+   
     taskInputEl = ($(event.target).siblings("textarea").val());
     saveSubmitBtn = ($(event.target).attr("data-time"));
     console.log(saveSubmitBtn);
     console.log(taskInputEl);
-    // localStorage.setItem(saveSubmitBtn, taskInputEl);
+    localStorage.setItem(saveSubmitBtn, taskInputEl);
+    displayLastInput();
     // var newTask = localStorage.getItem("newTaskEntry");
     // console.log(newTask);
   }
 
-
+  
 })
 
-// function displayTaskInput (){
-//   // nineTextEl.val(localStorage.getItem("taskItems"));
-//   $("textarea").each(function(){
-//   let newTasks = textInputEl.val(localStorage.getItem("taskItems"))
-//   })
 
-// }
 
 // call function to persit refresh - doesn't work
 function displayLastInput() {
-  let newTask = localStorage.getItem("newTaskEntry");
+ taskInputEl.innerHTML = localStorage.getItem(taskInputEl);
 
 }
 
-displayLastInput();
+
 
 // color code time blocks depending on how they match current time
 function timeBlockColors() {
@@ -99,22 +94,6 @@ function timeBlockColors() {
       element.classList.add("future");
     }
 });
-
-  // $(".time-block").each(function () {
-  //   let currentTime = now.hours();
-  //   let calHour = parseInt($(this).attr("data-time"));
-  //   //   console.log(parseInt($(this).attr("data-time")))
-  //   //  console.log(currentTime)
-  //   if (calHour === currentTime) {
-  //     $(this).addClass("present")
-  //   } else if (calHour < currentTime) {
-  //     $(this).addClass("past")
-  //   } else {
-  //     $(this).addClass("future")
-  //   }
-
-  // });
-
 
 }
 
